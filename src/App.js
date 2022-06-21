@@ -1,25 +1,12 @@
-import { useEffect, useState } from 'react';
+import { React , useContext, useEffect } from 'react';
 import './App.css';
-import {  getPokemon, getPokemonList } from './services';
+import { AppContext } from './contexts/AppContext';
+import Home from './Home';
+
 
 function App() {
 
-    const[pokemon, setPokemon] = useState([])
-
-    const getAllPokemon =  async() => {
-        try {
-            const { data } = await getPokemonList()
-            const promises = data.results.map(async(pokemon) => {
-                return await getPokemon(pokemon.url)
-            })
-
-            const results = await Promise.all(promises)
-            console.log(results)
-            setPokemon(results)
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    const { getAllPokemon } = useContext(AppContext)
 
     useEffect(() => {
         getAllPokemon()
@@ -27,16 +14,7 @@ function App() {
 
     return (
         <div className="App">
-            <h2>
-                {
-                    pokemon.map((pokemon, index) => 
-                        <div key={index}>
-                            <img alt={pokemon.data.name} src={pokemon.data.sprites.other["official-artwork"].front_default}></img>
-                            <h2>{(pokemon.data.name).toUpperCase()}</h2>
-                        </div>
-                    )
-                }
-            </h2>
+                <Home></Home>
         </div>
     );  
 }
