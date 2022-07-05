@@ -7,6 +7,7 @@ export const AppProvider = ({ children }) => {
     
     const[ pokemon, setPokemon ] = useState([])
     const[ filterPoke , setFilterPoke] = useState([])
+    const[loading, setLoading] = useState(true)
 
     const getAllPokemon = async() => {
         try {
@@ -18,6 +19,7 @@ export const AppProvider = ({ children }) => {
             const results = await Promise.all(promises)
             setPokemon(results)
             setFilterPoke(results)
+            setLoading(false)
         } catch (error) {
             console.log(error)
         }
@@ -25,7 +27,7 @@ export const AppProvider = ({ children }) => {
 
     return (
         <AppContext.Provider
-            value={{ getAllPokemon, pokemon, filterPoke, setFilterPoke }}
+            value={{ getAllPokemon, pokemon, filterPoke, setFilterPoke, loading }}
         >
             {children}
         </AppContext.Provider>
