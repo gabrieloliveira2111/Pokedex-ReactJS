@@ -1,14 +1,15 @@
 import React from 'react'
+import { Input } from './styled'
 
 const SearchBar = ({search, setSearch}) => {
-  return (
-    <div>
-        <input
-            type="text"
-            placeholder="Pesquisar"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)} />
-    </div>
+    return (
+        <>
+            <Input
+                type="text"
+                placeholder="Pesquisar"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)} />
+        </>
   )
 }
 

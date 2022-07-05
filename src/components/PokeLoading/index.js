@@ -1,9 +1,12 @@
 import React from 'react'
+import { PokeContainer, PokeBall } from './styled'
 
-const index = () => {
-  return (
-    <div>index</div>
+const PokeLoading = () => {
+    return (
+        <PokeContainer>
+            <PokeBall />
+        </PokeContainer>
   )
 }
 
-export default index
+export default PokeLoading
