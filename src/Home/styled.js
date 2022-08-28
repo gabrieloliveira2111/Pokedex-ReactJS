@@ -13,99 +13,100 @@ export const InfoContainer = styled.div`
 export const PokemonNumber = styled.p`
 `
 export const PokemonName = styled.h3`
+    text-transform: capitalize;
 `
 export const TypesContainer = styled.div`
 `
 export const PokemonType = styled.p`
-    text-align: center;
+    text-transform: capitalize;
     ${(props) => {
     switch (props.children) {
-        case "Grass":
+        case "grass":
             return css`
                 background-color: #9bcc50;
                 color: black;
         `
-        case "Poison":
+        case "poison":
             return css`
                 background-color: #b97fc9;
                 color: white;
         `
-        case "Fire":
+        case "fire":
             return css`
                 background-color: #fd7d24;
                 color: white;
         `
-        case "Water":
+        case "water":
             return css`
                 background-color: #4592c4;
                 color: white;
         `
-        case "Flying":
+        case "flying":
             return css`
                 background: linear-gradient(180deg, #3dc7ef, #bdb9b8 70%);
                 color: black;
         `
-        case "Electric":
+        case "electric":
             return css`
                 background-color: #eed535;
                 color: black;
         `
-        case "Normal":
+        case "normal":
             return css`
                 background-color: #a4acaf;
                 color: black;
         `
-        case "Fairy":
+        case "fairy":
             return css`
                 background-color: #fdb9e9;
                 color: black;
         `
-        case "Bug":
+        case "bug":
             return css`
                 background-color: #729f3f;
                 color: white;
         `
-        case "Ground":
+        case "ground":
             return css`
                 background: linear-gradient(180deg, #f7de3f, #ab9842 70%);;
                 color: black;
         `
-        case "Fighting":
+        case "fighting":
             return css`
                 background-color: #d56723;
                 color: white;
         `
-        case "Psychic":
+        case "psychic":
             return css`
                 background-color: #f366b9;
                 color: white;
         `
-        case "Rock":
+        case "rock":
             return css`
                 background-color: #a38c21;
                 color: white;
         `
-        case "Steel":
+        case "steel":
             return css`
                 background-color: #9eb7b8;
                 color: white;
         `
-        case "Ice":
+        case "ice":
             return css`
                 background-color: #51c4e7;
                 color: black;
         `
-        case "Ghost":
+        case "ghost":
             return css`
                 background-color: #7b62a3;
                 color: white;
         `
-        case "Dragon":
+        case "dragon":
             return css`
                 background: linear-gradient(180deg, #53a4cf, #f16e57 80%);
                 color: white;
         `
-        case "Dark":
+        case "dark":
             return css`
                 background-color: #707070;
                 color: white;
